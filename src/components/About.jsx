@@ -88,7 +88,7 @@ const About = () => {
               <img  
                 className="w-full h-auto rounded-lg shadow-lg" 
                 alt="Architects working on blueprints"
-               src="src/components/pexels-shvetsa-5324973.jpg" />
+               src="https://images.pexels.com/photos/7642088/pexels-photo-7642088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
               
             </div>
           </motion.div>
