@@ -37,16 +37,16 @@ const projectData = {
 
 const featuredVideos = [
   {
-    url: 'https://www.youtube.com/embed/1La4QzGeaaQ',
-    title: 'Corporate Promo',
+    url: 'https://www.youtube.com/embed/KsYdgb65FJo?si=KlWKA3f3YSuTCJTH',
   },
   {
-    url: 'https://www.youtube.com/embed/jfKfPfyJRdk',
-    title: 'Project Launch Event',
+    url: 'https://www.youtube.com/embed/lUWL4-HfEVM?si=Crim0Je6nRnoeh8S',
   },
   {
-    url: 'https://www.youtube.com/embed/qIcTM8WXFjk',
-    title: 'Behind the Build',
+    url: 'https://www.youtube.com/embed/NEKP-1REoto?si=khWZ_mns0D_GIzG1',
+  },
+    {
+    url: 'https://www.youtube.com/embed/i_iNHzVadc0?si=hpyZcZ0snkXotcym',
   },
 ];
 
