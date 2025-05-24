@@ -2,57 +2,88 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 
+const textVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.3,
+      duration: 0.8,
+      ease: 'easeOut',
+    },
+  }),
+};
+
 const Hero = () => {
   return (
-    <section id="home" className="relative h-[75vh] w-full hero-clip overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img  
-          className="w-full h-full object-cover" 
-          alt="Modern construction site with tall buildings and cranes"
-          src="https://images.pexels.com/photos/302769/pexels-photo-302769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        />
-      </div>
-      
-      <div className="absolute inset-0 hero-overlay z-10"></div>
-      
-      <div className="container mx-auto px-4 h-full flex items-center relative z-20">
-        <div className="max-w-xl">
+    <section
+      id="home"
+      className="relative w-full overflow-hidden h-[70vh]"
+    >
+      {/* Background Image */}
+      <img
+        src="https://images.pexels.com/photos/302769/pexels-photo-302769.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
+        alt="Construction Site"
+        className="absolute inset-0 w-full h-full object-cover brightness-95"
+      />
+
+      {/* Stronger White Gradient Overlay on Mobile */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/100 via-white/90 to-white/0 sm:via-white/80 sm:to-transparent"></div>
+
+      {/* Text Content */}
+      <div className="relative z-20 flex flex-col justify-center items-center h-full px-4 text-center max-w-3xl mx-auto">
+        <motion.h1
+          custom={1}
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
+          className="text-gray-900 font-extrabold text-4xl md:text-5xl leading-tight"
+        >
+          EMPHASIS DESIGNS
+        </motion.h1>
+
+        <motion.p
+          custom={2}
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
+          className="mt-4 text-gray-800 text-lg md:text-xl font-medium max-w-lg"
+        >
+          Crafting Spaces That Inspire & Endure
+        </motion.p>
+
+        <motion.p
+          custom={3}
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
+          className="mt-6 text-gray-900 text-base md:text-lg max-w-xl font-normal leading-relaxed"
+        >
+          We specialize in transforming your vision into reality — delivering exceptional architecture, interiors, and construction with precision and passion.
+        </motion.p>
+
+        <motion.div
+          custom={4}
+          initial="hidden"
+          animate="visible"
+          variants={textVariants}
+          className="mt-8"
+        >
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="mb-2"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300 }}
           >
-            <p className="text-gray-700 font-medium uppercase tracking-wider">AT</p>
-            <h1 className="text-3xl font-bold mb-2">EMPHASIS DESIGNS</h1>
-          </motion.div>
-          
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: 'easeOut', delay: 0.5 }}
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-8"
-          >
-            WE DELIVER THE BEST
-          </motion.h2>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: 'easeOut', delay: 1 }}
-          >
-            <Button 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg rounded-md"
-              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+            <Button
+              className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-14 py-5 rounded-md shadow-lg animate-pulse"
+              onClick={() =>
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })
+              }
             >
               Contact Us
             </Button>
           </motion.div>
-        </div>
-      </div>
-      
-      <div className="absolute bottom-0 right-0 w-1/3 h-full z-0">
-        <div className="w-full h-full bg-yellow-400 opacity-20"></div>
+        </motion.div>
       </div>
     </section>
   );
