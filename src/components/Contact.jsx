@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 const Contact = () => {
   return (
@@ -47,6 +48,55 @@ const Contact = () => {
           <p className="text-gray-800">
             Email id:- emphasisdesigns@gmail.com
           </p>
+        </motion.div>
+
+        {/* Social Icons Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="flex justify-center space-x-8 mt-12"
+        >
+          <a
+            href="https://wa.me/918088255301"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="text-green-500 hover:text-green-600 text-4xl transition-colors duration-300"
+          >
+            <FaWhatsapp />
+          </a>
+
+          <a
+            href="https://instagram.com/emphasisdesigns"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-pink-600 hover:text-pink-700 text-4xl transition-colors duration-300"
+          >
+            <FaInstagram />
+          </a>
+
+          <a
+            href="https://linkedin.com/company/emphasisdesigns"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-blue-700 hover:text-blue-800 text-4xl transition-colors duration-300"
+          >
+            <FaLinkedin />
+          </a>
+
+          <a
+            href="https://youtube.com/emphasisdesigns"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="text-red-600 hover:text-red-700 text-4xl transition-colors duration-300"
+          >
+            <FaYoutube />
+          </a>
         </motion.div>
       </div>
     </section>
