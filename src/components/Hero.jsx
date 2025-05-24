@@ -9,8 +9,11 @@ const textVariants = {
     y: 0,
     transition: {
       delay: i * 0.3,
-      duration: 0.8,
-      ease: 'easeOut',
+      duration: 1,           // Slightly longer duration for smoother fade
+      ease: [0.4, 0, 0.2, 1], // Custom easing curve for smooth ease-out
+      type: 'spring',
+      stiffness: 100,
+      damping: 20,
     },
   }),
 };
@@ -72,7 +75,7 @@ const Hero = () => {
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
-            transition={{ type: 'spring', stiffness: 300 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           >
             <Button
               className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-14 py-5 rounded-md shadow-lg animate-pulse"
