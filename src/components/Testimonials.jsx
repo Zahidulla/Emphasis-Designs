@@ -41,7 +41,7 @@ const Testimonials = () => {
               <img  
                 className="w-full h-full object-cover" 
                 alt="Client testimonial avatar"
-               src="https://images.unsplash.com/photo-1677696795873-ca21e7d76a51" />
+               src="https://images.pexels.com/photos/32235885/pexels-photo-32235885.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
             </div>
           </div>
           
