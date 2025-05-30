@@ -36,18 +36,10 @@ const projectData = {
 };
 
 const featuredVideos = [
-  {
-    url: 'https://www.youtube.com/embed/KsYdgb65FJo?si=KlWKA3f3YSuTCJTH',
-  },
-  {
-    url: 'https://www.youtube.com/embed/lUWL4-HfEVM?si=Crim0Je6nRnoeh8S',
-  },
-  {
-    url: 'https://www.youtube.com/embed/NEKP-1REoto?si=khWZ_mns0D_GIzG1',
-  },
-    {
-    url: 'https://www.youtube.com/embed/i_iNHzVadc0?si=hpyZcZ0snkXotcym',
-  },
+  { url: 'https://www.youtube.com/embed/KsYdgb65FJo?si=KlWKA3f3YSuTCJTH' },
+  { url: 'https://www.youtube.com/embed/lUWL4-HfEVM?si=Crim0Je6nRnoeh8S' },
+  { url: 'https://www.youtube.com/embed/NEKP-1REoto?si=khWZ_mns0D_GIzG1' },
+  { url: 'https://www.youtube.com/embed/i_iNHzVadc0?si=hpyZcZ0snkXotcym' },
 ];
 
 const Projects = () => {
@@ -55,9 +47,7 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState('Exterior');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalImage, setModalImage] = useState('');
-
   const [featuredIndex, setFeaturedIndex] = useState(0);
-
   const projects = projectData[activeTab];
 
   const nextSlide = () => {
@@ -111,7 +101,7 @@ const Projects = () => {
           </motion.h2>
 
           {/* Tabs */}
-          <div className="flex justify-center mb-10 space-x-4">
+          <div className="flex justify-center mb-10 w-full max-w-md mx-auto space-x-3">
             {tabs.map((tab) => (
               <button
                 key={tab}
@@ -119,7 +109,7 @@ const Projects = () => {
                   setActiveTab(tab);
                   setCurrentIndex(0);
                 }}
-                className={`px-6 py-2 rounded-full text-lg font-semibold transition-all duration-300
+                className={`flex-1 text-center px-4 py-2 text-sm sm:text-base font-semibold rounded-full transition-all duration-300
                   ${
                     activeTab === tab
                       ? 'bg-orange-500 text-white shadow-md'
@@ -251,13 +241,12 @@ const Projects = () => {
                   <div className="aspect-w-16 aspect-h-9">
                     <iframe
                       src={video.url}
-                      title={video.title}
+                      title={`Video ${index}`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="w-full h-64"
                     ></iframe>
                   </div>
-                  <p className="text-center mt-2 font-medium">{video.title}</p>
                 </div>
               ))}
             </div>
@@ -268,15 +257,12 @@ const Projects = () => {
                 <div className="aspect-w-16 aspect-h-9">
                   <iframe
                     src={featuredVideos[featuredIndex].url}
-                    title={featuredVideos[featuredIndex].title}
+                    title={`Video ${featuredIndex}`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="w-full h-64"
                   ></iframe>
                 </div>
-                <p className="text-center mt-2 font-medium">
-                  {featuredVideos[featuredIndex].title}
-                </p>
               </div>
             </div>
 
