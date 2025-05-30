@@ -6,22 +6,22 @@ const WhyChooseUs = () => {
     {
       title: 'Work Strategy',
       description: 'Driving innovation with creative, innovative solutions. Creativity, tech, and strategy in perfect harmony.',
-      image: 'architects-discussing-plans'
+      image: 'https://images.pexels.com/photos/5922329/pexels-photo-5922329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
     },
     {
       title: 'Specialist Engineers',
       description: 'Expert engineers delivering tailored solutions with precision and innovation.',
-      image: 'engineer-with-yellow-accent'
+      image: 'https://images.pexels.com/photos/3769135/pexels-photo-3769135.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
     },
     {
       title: 'Best Quality',
       description: 'Delivering exceptional service in designs with unmatched quality and care.',
-      image: 'construction-building-quality'
+      image: 'https://images.pexels.com/photos/7937751/pexels-photo-7937751.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
     },
     {
       title: 'Skilled Workers',
       description: 'Expertly trained, highly skilled workers delivering quality craftsmanship and reliable results.',
-      image: 'construction-worker-safety'
+      image: 'https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
     }
   ];
 
