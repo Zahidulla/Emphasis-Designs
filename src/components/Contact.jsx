@@ -89,7 +89,7 @@ const Contact = () => {
           </a>
 
           <a
-            href="https://youtube.com/emphasisdesigns"
+            href="https://www.youtube.com/@emphasisdesigns"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
