@@ -10,20 +10,6 @@ import {
 import { FiGlobe, FiInfo } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// CSS for glowing button animation (inject once)
-const glowStyle = `
-@keyframes glowPulse {
-  0%, 100% {
-    box-shadow: 0 0 8px 2px rgba(249, 115, 22, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 16px 6px rgba(249, 115, 22, 1);
-  }
-}
-.glow-slow {
-  animation: glowPulse 3s ease-in-out infinite;
-}
-`;
 if (typeof window !== 'undefined') {
   const styleSheet = document.styleSheets[0];
   if (styleSheet && !Array.from(styleSheet.cssRules).some(r => r.name === 'glowPulse')) {
