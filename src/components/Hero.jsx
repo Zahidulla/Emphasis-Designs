@@ -50,7 +50,7 @@ const Hero = () => {
           variants={textVariants}
           className="mt-4 text-gray-800 text-lg md:text-xl font-medium max-w-lg"
         >
-          Crafting Spaces That Inspire & Endure
+          Crafting Spaces That Inspires
         </motion.p>
 
         <motion.p
