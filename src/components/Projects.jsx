@@ -57,8 +57,12 @@ const Projects = () => {
   const nextFeatured = () => setFeaturedIndex((prev) => (prev + 1) % featuredVideos.length);
   const prevFeatured = () => setFeaturedIndex((prev) => (prev - 1 + featuredVideos.length) % featuredVideos.length);
 
-  const getVisibleProjects = () => [...Array(3)].map((_, i) => projects[(currentIndex + i) % projects.length]);
-  const getVisibleFeaturedVideos = () => [...Array(Math.min(3, featuredVideos.length))].map((_, i) => featuredVideos[(featuredIndex + i) % featuredVideos.length]);
+  const getVisibleProjects = () =>
+    [...Array(3)].map((_, i) => projects[(currentIndex + i) % projects.length]);
+  const getVisibleFeaturedVideos = () =>
+    [...Array(Math.min(3, featuredVideos.length))].map(
+      (_, i) => featuredVideos[(featuredIndex + i) % featuredVideos.length]
+    );
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: nextSlide,
@@ -76,6 +80,7 @@ const Projects = () => {
 
   return (
     <>
+      {/* Projects Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.h2
@@ -88,6 +93,7 @@ const Projects = () => {
             EXPLORE OUR RECENT PROJECTS
           </motion.h2>
 
+          {/* Tabs */}
           <div className="flex justify-center mb-10 w-full max-w-md mx-auto space-x-3">
             {tabs.map((tab) => (
               <button
@@ -107,6 +113,7 @@ const Projects = () => {
             ))}
           </div>
 
+          {/* Desktop Carousel */}
           <div className="relative">
             <div className="hidden md:grid md:grid-cols-3 gap-6">
               {getVisibleProjects().map((project, index) => (
@@ -128,6 +135,7 @@ const Projects = () => {
               ))}
             </div>
 
+            {/* Mobile Swipeable Image */}
             <div className="md:hidden" {...swipeHandlers}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -145,6 +153,7 @@ const Projects = () => {
               </motion.div>
             </div>
 
+            {/* Nav Arrows */}
             <button className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10" onClick={prevSlide}>
               <ChevronLeft className="h-6 w-6 text-gray-800" />
             </button>
@@ -153,6 +162,7 @@ const Projects = () => {
             </button>
           </div>
 
+          {/* Dots Indicator */}
           <div className="flex justify-center mt-8">
             {projects.map((_, index) => (
               <button
@@ -163,6 +173,7 @@ const Projects = () => {
             ))}
           </div>
 
+          {/* Modal */}
           <AnimatePresence>
             {modalImage && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center">
@@ -178,10 +189,12 @@ const Projects = () => {
         </div>
       </section>
 
+      {/* Featured Videos Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">OUR FEATURED VIDEOS</h2>
           <div className="relative">
+            {/* Desktop Grid */}
             <div className="hidden md:grid md:grid-cols-3 gap-6">
               {getVisibleFeaturedVideos().map((video, index) => (
                 <div key={index} className="overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2">
@@ -198,23 +211,26 @@ const Projects = () => {
               ))}
             </div>
 
-           <div className="md:hidden overflow-x-auto no-scrollbar">
-            <div className="flex space-x-4">
-              {featuredVideos.map((video, index) => (
-                <div key={index} className="min-w-[85%] flex-shrink-0 overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe
-                      src={video.url}
-                      title={`Video ${index}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-64"
-                    ></iframe>
+            {/* Mobile Scroll */}
+            <div className="md:hidden overflow-x-auto no-scrollbar" {...videoSwipeHandlers}>
+              <div className="flex space-x-4">
+                {featuredVideos.map((video, index) => (
+                  <div key={index} className="min-w-[85%] flex-shrink-0 overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2">
+                    <div className="aspect-w-16 aspect-h-9">
+                      <iframe
+                        src={video.url}
+                        title={`Video ${index}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-64"
+                      ></iframe>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+
+            {/* Nav Arrows */}
             <button onClick={prevFeatured} className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10">
               <ChevronLeft className="h-6 w-6 text-gray-800" />
             </button>
@@ -223,6 +239,7 @@ const Projects = () => {
             </button>
           </div>
 
+          {/* Dots for Mobile */}
           <div className="flex justify-center mt-6 md:hidden">
             {featuredVideos.map((_, index) => (
               <button
