@@ -44,7 +44,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-gray-600 mb-8"
             >
-              Our team of experts are specialized in designing and constructing commercial and residential spaces that are functional, sustainable, and aesthetically pleasing.
+              Our team of experts is specialized in designing and constructing commercial and residential spaces that are functional, sustainable, and aesthetically pleasing.
             </motion.p>
             
             <motion.div
