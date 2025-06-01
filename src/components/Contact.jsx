@@ -42,7 +42,7 @@ const Contact = () => {
           </p>
           
           <h4 className="text-2xl font-bold mb-4">Contact Number</h4>
-          <p className="text-gray-800 mb-2">+91-80882 55301</p>
+          <p className="text-gray-800 mb-2">+91-88923 25805</p>
           <p className="text-gray-800 mb-6">+91-80882 55301</p>
           
           <p className="text-gray-800">
@@ -59,7 +59,7 @@ const Contact = () => {
           className="flex justify-center space-x-8 mt-12"
         >
           <a
-            href="https://wa.me/918088255301"
+            href="https://wa.me/918892325805"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
@@ -69,7 +69,7 @@ const Contact = () => {
           </a>
 
           <a
-            href="https://instagram.com/emphasisdesigns"
+            href="https://instagram.com/emphasisdesigns.ed"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
