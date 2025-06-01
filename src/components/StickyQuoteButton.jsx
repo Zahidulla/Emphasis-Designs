@@ -10,13 +10,6 @@ import {
 import { FiGlobe, FiInfo } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
-if (typeof window !== 'undefined') {
-  const styleSheet = document.styleSheets[0];
-  if (styleSheet && !Array.from(styleSheet.cssRules).some(r => r.name === 'glowPulse')) {
-    styleSheet.insertRule(glowStyle, styleSheet.cssRules.length);
-  }
-}
-
 const SocialConnect = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [quoteOpen, setQuoteOpen] = useState(false);
@@ -124,10 +117,10 @@ const SocialConnect = () => {
           <FiGlobe className="text-white text-xl" aria-label="Website" title="Website" />
         </Button>
 
-        {/* Get Quote Button with glow */}
+        {/* Get Quote Button WITHOUT glow */}
         <Button
           onClick={handleQuoteClick}
-          className={`bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg flex items-center justify-center space-x-2 font-semibold transition-all duration-300 glow-slow
+          className={`bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg flex items-center justify-center space-x-2 font-semibold transition-all duration-300
             ${showText ? 'text-lg px-6 py-3 w-[200px]' : 'text-xl p-3 w-[56px]'}
           `}
         >
