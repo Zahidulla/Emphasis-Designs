@@ -51,7 +51,6 @@ function App() {
         <Testimonials />
         <Contact />
         <StickyQuoteButton />
-
       </main>
       
       <Footer />
