@@ -198,33 +198,27 @@ const Projects = () => {
             <div className="hidden md:grid md:grid-cols-3 gap-6">
               {getVisibleFeaturedVideos().map((video, index) => (
                 <div key={index} className="overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2">
-                  <div className="aspect-w-16 aspect-h-9">
-                    <iframe
-                      src={video.url}
-                      title={`Video ${index}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-64"
-                    ></iframe>
-                  </div>
+                  <img
+                    src={`https://img.youtube.com/vi/${video.url.split('/embed/')[1].split('?')[0]}/0.jpg`}
+                    alt={`Video ${index}`}
+                    onClick={() => window.open(`https://www.youtube.com/watch?v=${video.url.split('/embed/')[1].split('?')[0]}`, '_blank')}
+                    className="w-full h-64 object-cover cursor-pointer rounded-md hover:brightness-90 transition"
+                  />
                 </div>
               ))}
             </div>
 
             {/* Mobile Scroll */}
-            <div className="md:hidden overflow-x-auto no-scrollbar" {...videoSwipeHandlers}>
-              <div className="flex space-x-4">
+            <div className="md:hidden overflow-x-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-orange-100" {...videoSwipeHandlers}>
+              <div className="flex space-x-4 pr-4">
                 {featuredVideos.map((video, index) => (
                   <div key={index} className="min-w-[85%] flex-shrink-0 overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2">
-                    <div className="aspect-w-16 aspect-h-9">
-                      <iframe
-                        src={video.url}
-                        title={`Video ${index}`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="w-full h-64"
-                      ></iframe>
-                    </div>
+                    <img
+                      src={`https://img.youtube.com/vi/${video.url.split('/embed/')[1].split('?')[0]}/0.jpg`}
+                      alt={`Video ${index}`}
+                      onClick={() => window.open(`https://www.youtube.com/watch?v=${video.url.split('/embed/')[1].split('?')[0]}`, '_blank')}
+                      className="w-full h-64 object-cover cursor-pointer rounded-md hover:brightness-90 transition"
+                    />
                   </div>
                 ))}
               </div>
@@ -237,17 +231,6 @@ const Projects = () => {
             <button onClick={nextFeatured} className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10">
               <ChevronRight className="h-6 w-6 text-gray-800" />
             </button>
-          </div>
-
-          {/* Dots for Mobile */}
-          <div className="flex justify-center mt-6 md:hidden">
-            {featuredVideos.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setFeaturedIndex(index)}
-                className={`w-2 h-2 mx-1 rounded-full ${index === featuredIndex ? 'bg-orange-500' : 'bg-gray-300'}`}
-              />
-            ))}
           </div>
         </div>
       </section>
