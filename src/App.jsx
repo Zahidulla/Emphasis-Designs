@@ -12,6 +12,7 @@ import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import MobileMenu from '@/components/MobileMenu';
+import StickyQuoteButton from '@/components/StickyQuoteButton';
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,6 +50,7 @@ function App() {
         <Team />
         <Testimonials />
         <Contact />
+        <StickyQuoteButton />
       </main>
       
       <Footer />
