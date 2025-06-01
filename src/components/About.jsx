@@ -5,11 +5,11 @@ import { CheckCircle } from 'lucide-react';
 
 const About = () => {
   const features = [
-    'Specializes in designing and constructing',
-    'Strong understanding of our clients\' needs and goals',
-    'Architectural design, engineering, and construction management',
-    'Specialized in interior and exterior design',
-    'Sustainable engineering solutions'
+    'Specializes in designing and constructing.',
+    'Strong understanding of our clients\' wants and goals.',
+    'Architectural design, engineering, and construction management.',
+    'Specialized in interior and exterior design.',
+    'Sustainable engineering solutions.'
   ];
 
   return (
@@ -44,7 +44,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-gray-600 mb-8"
             >
-              Our team of experts specializes in designing and constructing commercial and residential spaces that are functional, sustainable, and aesthetically pleasing.
+              Our team of experts are specialized in designing and constructing commercial and residential spaces that are functional, sustainable, and aesthetically pleasing.
             </motion.p>
             
             <motion.div
