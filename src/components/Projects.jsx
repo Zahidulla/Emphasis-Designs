@@ -48,6 +48,7 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState('Exterior');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalImage, setModalImage] = useState('');
+  const [modalVideo, setModalVideo] = useState('');
   const [featuredIndex, setFeaturedIndex] = useState(0);
   const projects = projectData[activeTab];
 
@@ -59,17 +60,11 @@ const Projects = () => {
 
   const getVisibleProjects = () =>
     [...Array(3)].map((_, i) => projects[(currentIndex + i) % projects.length]);
+
   const getVisibleFeaturedVideos = () =>
     [...Array(Math.min(3, featuredVideos.length))].map(
       (_, i) => featuredVideos[(featuredIndex + i) % featuredVideos.length]
     );
-
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: nextSlide,
-    onSwipedRight: prevSlide,
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: false,
-  });
 
   const videoSwipeHandlers = useSwipeable({
     onSwipedLeft: nextFeatured,
@@ -93,7 +88,6 @@ const Projects = () => {
             EXPLORE OUR RECENT PROJECTS
           </motion.h2>
 
-          {/* Tabs */}
           <div className="flex justify-center mb-10 w-full max-w-md mx-auto space-x-3">
             {tabs.map((tab) => (
               <button
@@ -113,7 +107,6 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* Desktop Carousel */}
           <div className="relative">
             <div className="hidden md:grid md:grid-cols-3 gap-6">
               {getVisibleProjects().map((project, index) => (
@@ -135,45 +128,36 @@ const Projects = () => {
               ))}
             </div>
 
-            {/* Mobile Swipeable Image */}
-            <div className="md:hidden" {...swipeHandlers}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="overflow-hidden rounded-lg shadow-lg cursor-pointer"
-                onClick={() => setModalImage(projects[currentIndex].image)}
-              >
-                <img
-                  className="w-full h-64 object-cover"
-                  src={projects[currentIndex].image}
-                  alt={projects[currentIndex].title}
-                />
-              </motion.div>
+            <div className="md:hidden overflow-x-auto no-scrollbar">
+              <div className="flex space-x-4">
+                {projects.map((project, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="min-w-[85%] flex-shrink-0 overflow-hidden rounded-lg shadow-lg cursor-pointer"
+                    onClick={() => setModalImage(project.image)}
+                  >
+                    <img
+                      className="w-full h-64 object-cover"
+                      src={project.image}
+                      alt={project.title}
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
-            {/* Nav Arrows */}
-            <button className="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10" onClick={prevSlide}>
+            <button className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10" onClick={prevSlide}>
               <ChevronLeft className="h-6 w-6 text-gray-800" />
             </button>
-            <button className="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10" onClick={nextSlide}>
+            <button className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10" onClick={nextSlide}>
               <ChevronRight className="h-6 w-6 text-gray-800" />
             </button>
           </div>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center mt-8">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 mx-1 rounded-full ${index === currentIndex ? 'bg-orange-500' : 'bg-gray-300'}`}
-              />
-            ))}
-          </div>
-
-          {/* Modal */}
           <AnimatePresence>
             {modalImage && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center">
@@ -190,39 +174,37 @@ const Projects = () => {
       </section>
 
       {/* Featured Videos Section */}
-      <section className="py-20 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">OUR FEATURED VIDEOS</h2>
           <div className="relative">
-            {/* Desktop Grid */}
             <div className="hidden md:grid md:grid-cols-3 gap-6">
               {getVisibleFeaturedVideos().map((video, index) => (
-                <div key={index} className="overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2">
+                <div key={index} className="overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2 cursor-pointer" onClick={() => setModalVideo(video.url)}>
                   <div className="aspect-w-16 aspect-h-9">
                     <iframe
                       src={video.url}
                       title={`Video ${index}`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      className="w-full h-64"
+                      className="w-full h-64 pointer-events-none"
                     ></iframe>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Mobile Scroll */}
             <div className="md:hidden overflow-x-auto no-scrollbar" {...videoSwipeHandlers}>
               <div className="flex space-x-4">
                 {featuredVideos.map((video, index) => (
-                  <div key={index} className="min-w-[85%] flex-shrink-0 overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2">
+                  <div key={index} className="min-w-[85%] flex-shrink-0 overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2 cursor-pointer" onClick={() => setModalVideo(video.url)}>
                     <div className="aspect-w-16 aspect-h-9">
                       <iframe
                         src={video.url}
                         title={`Video ${index}`}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
-                        className="w-full h-64"
+                        className="w-full h-64 pointer-events-none"
                       ></iframe>
                     </div>
                   </div>
@@ -230,7 +212,6 @@ const Projects = () => {
               </div>
             </div>
 
-            {/* Nav Arrows */}
             <button onClick={prevFeatured} className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10">
               <ChevronLeft className="h-6 w-6 text-gray-800" />
             </button>
@@ -238,19 +219,27 @@ const Projects = () => {
               <ChevronRight className="h-6 w-6 text-gray-800" />
             </button>
           </div>
-
-          {/* Dots for Mobile */}
-          <div className="flex justify-center mt-6 md:hidden">
-            {featuredVideos.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setFeaturedIndex(index)}
-                className={`w-2 h-2 mx-1 rounded-full ${index === featuredIndex ? 'bg-orange-500' : 'bg-gray-300'}`}
-              />
-            ))}
-          </div>
         </div>
       </section>
+
+      <AnimatePresence>
+        {modalVideo && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center">
+            <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} exit={{ scale: 0.9 }} className="relative bg-white rounded-xl overflow-hidden shadow-2xl max-w-5xl w-full h-[80vh] flex items-center justify-center">
+              <iframe
+                src={modalVideo}
+                title="Video Preview"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+              <button onClick={() => setModalVideo('')} className="absolute top-4 right-4 bg-red-600 hover:bg-red-700 text-white p-2 rounded-full shadow">
+                <X className="w-5 h-5" />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
