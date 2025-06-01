@@ -53,27 +53,33 @@ const Contact = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="max-w-3xl mx-auto text-center mb-8"
         >
-          <p className="text-gray-800 mb-4">
+          <p className="text-gray-800 mb-4 text-lg">
             Address:- Tank Bund Road, Opposite Indira Canteen Bismillah Nagar, Bengaluru-560029, Karnataka, India
           </p>
 
           <h4 className="text-2xl font-bold mb-4">Contact Number</h4>
-          <p className="text-gray-800 mb-2">
-            <a href="tel:+918892325805" className="hover:underline text-blue-600">
+          <p className="text-gray-800 mb-2 text-lg">
+            <a
+              href="tel:+918892325805"
+              className="hover:underline text-orange-500 font-semibold text-lg md:text-xl"
+            >
               +91-88923 25805
             </a>
           </p>
-          <p className="text-gray-800 mb-6">
-            <a href="tel:+918088255301" className="hover:underline text-blue-600">
+          <p className="text-gray-800 mb-6 text-lg">
+            <a
+              href="tel:+918088255301"
+              className="hover:underline text-orange-500 font-semibold text-lg md:text-xl"
+            >
               +91-80882 55301
             </a>
           </p>
 
-          <p className="text-gray-800">
-            Email id:{" "}
+          <p className="text-gray-800 text-lg">
+            Email id:{' '}
             <a
               href="mailto:emphasisdesigns@gmail.com"
-              className="hover:underline text-blue-600"
+              className="hover:underline text-orange-500 font-semibold text-lg md:text-xl"
             >
               emphasisdesigns@gmail.com
             </a>
