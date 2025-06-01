@@ -222,10 +222,21 @@ const Projects = () => {
         </div>
       </section>
 
+      {/* Smaller Video Modal */}
       <AnimatePresence>
         {modalVideo && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center">
-            <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} exit={{ scale: 0.9 }} className="relative bg-white rounded-xl overflow-hidden shadow-2xl max-w-5xl w-full h-[80vh] flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center"
+          >
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="relative bg-white rounded-xl overflow-hidden shadow-2xl w-[90%] max-w-3xl h-[60vh] flex items-center justify-center"
+            >
               <iframe
                 src={modalVideo}
                 title="Video Preview"
@@ -233,7 +244,10 @@ const Projects = () => {
                 allowFullScreen
                 className="w-full h-full"
               ></iframe>
-              <button onClick={() => setModalVideo('')} className="absolute top-4 right-4 bg-red-600 hover:bg-red-700 text-white p-2 rounded-full shadow">
+              <button
+                onClick={() => setModalVideo('')}
+                className="absolute top-4 right-4 bg-red-600 hover:bg-red-700 text-white p-2 rounded-full shadow"
+              >
                 <X className="w-5 h-5" />
               </button>
             </motion.div>
