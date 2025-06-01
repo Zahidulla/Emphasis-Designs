@@ -106,7 +106,7 @@ const Hero = () => {
           variants={textVariants}
           className="mt-4 text-gray-800 text-lg md:text-xl font-medium max-w-lg"
         >
-          Designing With Vision and Precision
+          Crafting Spaces That Inspires
         </motion.p>
 
         <motion.p
