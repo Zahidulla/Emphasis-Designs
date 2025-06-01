@@ -198,20 +198,23 @@ const Projects = () => {
               ))}
             </div>
 
-            <div className="md:hidden" {...videoSwipeHandlers}>
-              <div className="overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2">
-                <div className="aspect-w-16 aspect-h-9">
-                  <iframe
-                    src={featuredVideos[featuredIndex].url}
-                    title={`Video ${featuredIndex}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-64"
-                  ></iframe>
+           <div className="md:hidden overflow-x-auto no-scrollbar">
+            <div className="flex space-x-4">
+              {featuredVideos.map((video, index) => (
+                <div key={index} className="min-w-[85%] flex-shrink-0 overflow-hidden rounded-lg shadow-lg bg-gray-100 p-2">
+                  <div className="aspect-w-16 aspect-h-9">
+                    <iframe
+                      src={video.url}
+                      title={`Video ${index}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-64"
+                    ></iframe>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-
+          </div>
             <button onClick={prevFeatured} className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10">
               <ChevronLeft className="h-6 w-6 text-gray-800" />
             </button>
