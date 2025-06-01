@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 
 const textVariants = {
@@ -8,7 +8,7 @@ const textVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.2,
+      delay: i * 0.3,
       type: 'spring',
       stiffness: 60,
       damping: 18,
@@ -16,20 +16,76 @@ const textVariants = {
   }),
 };
 
+const offerVariants = {
+  initial: { opacity: 0, y: 10 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -10 },
+};
+
+const offerTexts = [
+  {
+    title: "Special Offer on Interior Designing!",
+    description: "Get a modern makeover with up to 20% off on interior design services.",
+  },
+  {
+    title: "Exterior Designing & Execution Deals",
+    description: "Avail exciting discounts on complete exterior design and execution packages.",
+  },
+  {
+    title: "Warranty on All Our Works",
+    description: "We offer up to 5 years warranty on design & construction work.",
+  },
+];
+
+// subtle breathing opacity animation CSS
+const breathingOpacityCSS = `
+@keyframes breathingOpacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+.breathing-opacity {
+  animation: breathingOpacity 4s ease-in-out infinite;
+}
+`;
+
 const Hero = () => {
+  const [currentOfferIndex, setCurrentOfferIndex] = useState(0);
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+
+  // Inject CSS once
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      let styleTag = document.getElementById('breathing-opacity-style');
+      if (!styleTag) {
+        styleTag = document.createElement('style');
+        styleTag.id = 'breathing-opacity-style';
+        styleTag.innerHTML = breathingOpacityCSS;
+        document.head.appendChild(styleTag);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const offerInterval = setInterval(() => {
+      setCurrentOfferIndex((prevIndex) => (prevIndex + 1) % offerTexts.length);
+    }, 3000);
+    return () => clearInterval(offerInterval);
+  }, []);
+
   return (
-    <section id="home" className="relative w-full overflow-hidden h-[70vh]">
-      {/* Background Image */}
+    <section id="home" className="relative w-full overflow-hidden h-[85vh]">
       <img
         src="https://images.pexels.com/photos/302769/pexels-photo-302769.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2"
         alt="Construction Site"
         className="absolute inset-0 w-full h-full object-cover brightness-95"
       />
 
-      {/* Stronger White Gradient Overlay on Mobile */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/100 via-white/90 to-white/0 sm:via-white/80 sm:to-transparent"></div>
 
-      {/* Text Content */}
       <div className="relative z-20 flex flex-col justify-center items-center h-full px-4 text-center max-w-3xl mx-auto">
         <motion.h1
           custom={1}
@@ -50,7 +106,7 @@ const Hero = () => {
           variants={textVariants}
           className="mt-4 text-gray-800 text-lg md:text-xl font-medium max-w-lg"
         >
-          Crafting Spaces That Inspires
+          Designing With Vision and Precision
         </motion.p>
 
         <motion.p
@@ -64,29 +120,70 @@ const Hero = () => {
           We specialize in transforming your vision into reality — delivering exceptional architecture, interiors, and construction with precision and passion.
         </motion.p>
 
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentOfferIndex}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={offerVariants}
+            transition={{ duration: 0.5 }}
+            className="mt-6 bg-orange-100 text-orange-900 px-4 py-3 rounded-md shadow-sm"
+          >
+            <div className="font-semibold">{offerTexts[currentOfferIndex].title}</div>
+            <div className="text-sm">{offerTexts[currentOfferIndex].description}</div>
+          </motion.div>
+        </AnimatePresence>
+
         <motion.div
           custom={4}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={textVariants}
-          className="mt-8"
+          className="mt-6"
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           >
             <Button
-              className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-14 py-5 rounded-md shadow-lg animate-pulse"
-              onClick={() =>
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })
-              }
+              className="bg-orange-500 hover:bg-orange-600 text-white text-xl px-10 py-4 rounded-md shadow-lg breathing-opacity"
+              onClick={() => setIsQuoteOpen(true)}
             >
-              Contact Us
+              Get Quote
             </Button>
           </motion.div>
         </motion.div>
       </div>
+
+      {isQuoteOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full max-w-3xl relative">
+            <div className="flex justify-between items-center p-4 border-b">
+              <h2 className="text-lg font-semibold">Request a Quote</h2>
+              <button
+                className="text-gray-600 hover:text-gray-800"
+                onClick={() => setIsQuoteOpen(false)}
+                aria-label="Close Modal"
+              >
+                ×
+              </button>
+            </div>
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdWZfSdQxxx/viewform?embedded=true"
+              width="100%"
+              height="500"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              title="Get Quote Form"
+            >
+              Loading…
+            </iframe>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
