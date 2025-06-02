@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
         'https://images.pexels.com/photos/5922329/pexels-photo-5922329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     },
     {
-      title: 'Specialist Engineers',
+      title: 'Specialised Engineers',
       description:
         'Expert engineers delivering tailored solutions with precision and innovation.',
       image:
