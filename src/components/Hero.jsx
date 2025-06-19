@@ -171,18 +171,17 @@ const Hero = () => {
                 ×
               </button>
             </div>
-            <div className="p-4">
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLScfmn2dFy_93G2lIbiXqgNGuTa2e6JOgv9lU3r84r689jqYAA/viewform?embedded=true"
-                width="100%"
-                height="800"
-                frameBorder="0"
-                marginHeight="0"
-                marginWidth="0"
-                title="Get Quote Form"
-              >
-                Loading…
-              </iframe>
+            <div className="p-4 w-full">
+              <div className="w-full aspect-[4/3] sm:aspect-[16/9]">
+                <iframe
+                  src="https://docs.google.com/forms/d/e/1FAIpQLScfmn2dFy_93G2lIbiXqgNGuTa2e6JOgv9lU3r84r689jqYAA/viewform?embedded=true"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  title="Get Quote Form"
+                >
+                  Loading…
+                </iframe>
+              </div>
             </div>
           </div>
         </div>
