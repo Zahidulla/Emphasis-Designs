@@ -56,7 +56,7 @@ const Hero = () => {
   const [currentOfferIndex, setCurrentOfferIndex] = useState(0);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
-  // Inject CSS once
+  // Inject breathing opacity animation
   useEffect(() => {
     if (typeof window !== 'undefined') {
       let styleTag = document.getElementById('breathing-opacity-style');
@@ -69,12 +69,26 @@ const Hero = () => {
     }
   }, []);
 
+  // Rotate offers
   useEffect(() => {
     const offerInterval = setInterval(() => {
       setCurrentOfferIndex((prevIndex) => (prevIndex + 1) % offerTexts.length);
     }, 3000);
     return () => clearInterval(offerInterval);
   }, []);
+
+  // Load Typeform embed script when modal is open
+  useEffect(() => {
+    if (isQuoteOpen && typeof window !== 'undefined') {
+      const existingScript = document.querySelector('script[src="//embed.typeform.com/next/embed.js"]');
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.src = "//embed.typeform.com/next/embed.js";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    }
+  }, [isQuoteOpen]);
 
   return (
     <section id="home" className="relative w-full overflow-hidden h-[85vh]">
@@ -163,24 +177,16 @@ const Hero = () => {
             <div className="flex justify-between items-center p-4 border-b">
               <h2 className="text-lg font-semibold">Request a Quote</h2>
               <button
-                className="text-gray-600 hover:text-gray-800"
+                className="text-gray-600 hover:text-gray-800 text-xl"
                 onClick={() => setIsQuoteOpen(false)}
                 aria-label="Close Modal"
               >
                 ×
               </button>
             </div>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSdWZfSdQxxx/viewform?embedded=true"
-              width="100%"
-              height="500"
-              frameBorder="0"
-              marginHeight={0}
-              marginWidth={0}
-              title="Get Quote Form"
-            >
-              Loading…
-            </iframe>
+            <div className="p-4">
+              <div data-tf-live="01JY4DGP2ZMXJ6C8W993THWHEC" id="typeform-embed-container"></div>
+            </div>
           </div>
         </div>
       )}
