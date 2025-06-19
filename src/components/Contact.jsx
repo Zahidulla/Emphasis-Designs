@@ -136,7 +136,7 @@ const Contact = () => {
       {/* Modal with Responsive Google Form */}
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-5xl relative overflow-hidden">
+          <div className="bg-white rounded-lg shadow-lg w-full max-w-5xl relative overflow-hidden max-h-[90vh]">
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold z-10"
@@ -144,7 +144,7 @@ const Contact = () => {
             >
               ×
             </button>
-            <div className="w-full aspect-[4/3] sm:aspect-[16/9]">
+            <div className="w-full h-[80vh] sm:aspect-[16/9]">
               <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLScfmn2dFy_93G2lIbiXqgNGuTa2e6JOgv9lU3r84r689jqYAA/viewform?embedded=true"
                 className="w-full h-full border-0"
