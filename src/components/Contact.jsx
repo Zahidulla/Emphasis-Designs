@@ -133,10 +133,10 @@ const Contact = () => {
         </motion.div>
       </div>
 
-      {/* Modal */}
+      {/* Modal with Embedded Google Form */}
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4">
-          <div className="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
+          <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl relative">
             <button
               onClick={() => setShowModal(false)}
               className="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold"
@@ -144,37 +144,20 @@ const Contact = () => {
             >
               ×
             </button>
-            <h2 className="text-xl font-bold mb-4 text-center text-orange-500">Request a Quote</h2>
-            <form className="space-y-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                required
-              />
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-              <textarea
-                placeholder="Project Details"
-                rows="4"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-600 transition"
+            <div className="p-6">
+              <h2 className="text-xl font-bold mb-4 text-center text-orange-500">Request a Quote</h2>
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLScfmn2dFy_93G2lIbiXqgNGuTa2e6JOgv9lU3r84r689jqYAA/viewform?embedded=true"
+                width="100%"
+                height="750"
+                frameBorder="0"
+                marginHeight="0"
+                marginWidth="0"
+                title="Request a Quote"
               >
-                Submit
-              </button>
-            </form>
+                Loading…
+              </iframe>
+            </div>
           </div>
         </div>
       )}
