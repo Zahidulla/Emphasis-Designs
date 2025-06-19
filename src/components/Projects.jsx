@@ -6,19 +6,35 @@ import { useSwipeable } from 'react-swipeable';
 const projectData = {
  Exterior: [
   {
-    image: 'https://drive.google.com/uc?id=1brUAnXvH9hmlc0qraWQxCBq7821HJLJQ',
+    image: 'https://drive.google.com/uc?export=view&id=1brUAnXvH9hmlc0qraWQxCBq7821HJLJQ',
     title: 'Commercial Tower22',
   },
   {
-    image: 'https://drive.google.com/uc?id=1iRKNbVw2dutBpchQ8EJj35b_dNf1eo29',
+    image: 'https://drive.google.com/uc?export=view&id=1iRKNbVw2dutBpchQ8EJj35b_dNf1eo29?usp=drive_link',
     title: 'Twin Towers Development2',
   },
   {
-    image: 'https://drive.google.com/uc?id=1FaGJ7hKUZ6C44_bzd2HYKjB0lWLBwnFs',
+    image: 'https://drive.google.com/uc?export=view&id=1FaGJ7hKUZ6C44_bzd2HYKjB0lWLBwnFs?usp=drive_link',
     title: 'Twin Towers Developmen1t',
   },
   {
-    image: 'https://drive.google.com/uc?id=1poU2C8UFszc8x8ivuLRUM7G92D8GE62o',
+    image: 'https://drive.google.com/uc?export=view&id=19VV-uQl3-we6E-kjjCorsCPZ4yyNoTfb?usp=drive_link',
+    title: 'Twin Towers Developmen22',
+  },
+   {
+    image: 'https://drive.google.com/uc?export=view&id=1xHvY3hXUp05xRMM_b5NZtIGxS759f0K8?usp=drive_link',
+    title: 'Commercial Tower2233',
+  },
+  {
+    image: 'https://drive.google.com/uc?export=view&id=1poU2C8UFszc8x8ivuLRUM7G92D8GE62o?usp=drive_link',
+    title: 'Twin Towers Development122',
+  },
+  {
+    image: 'https://drive.google.com/uc?export=view&id=1liSRmhIaGNTU_M93TGfEhMvkS5g_kQRT?usp=drive_link',
+    title: 'Twin Towers Developmen1t333',
+  },
+  {
+    image: 'https://drive.google.com/uc?export=view&id=1xZj07kfcaUnEm0ceIXexwxWLOL6hKlY3?usp=drive_link',
     title: 'Twin Towers Developmen22',
   },
 ],
