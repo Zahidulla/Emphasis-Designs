@@ -133,27 +133,23 @@ const Contact = () => {
         </motion.div>
       </div>
 
-      {/* Modal with Embedded Google Form */}
+      {/* Modal with Responsive Google Form */}
       {showModal && (
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center px-4">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl relative">
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg shadow-lg w-full max-w-5xl relative overflow-hidden">
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold"
+              className="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold z-10"
               aria-label="Close"
             >
               ×
             </button>
-            <div className="p-6">
-              <h2 className="text-xl font-bold mb-4 text-center text-orange-500">Request a Quote</h2>
+            <div className="w-full aspect-[4/3] sm:aspect-[16/9]">
               <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLScfmn2dFy_93G2lIbiXqgNGuTa2e6JOgv9lU3r84r689jqYAA/viewform?embedded=true"
-                width="100%"
-                height="750"
-                frameBorder="0"
-                marginHeight="0"
-                marginWidth="0"
-                title="Request a Quote"
+                className="w-full h-full border-0"
+                allowFullScreen
+                title="Request a Quote Form"
               >
                 Loading…
               </iframe>
