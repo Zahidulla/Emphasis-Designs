@@ -77,19 +77,6 @@ const Hero = () => {
     return () => clearInterval(offerInterval);
   }, []);
 
-  // Load Typeform embed script when modal is open
-  useEffect(() => {
-    if (isQuoteOpen && typeof window !== 'undefined') {
-      const existingScript = document.querySelector('script[src="//embed.typeform.com/next/embed.js"]');
-      if (!existingScript) {
-        const script = document.createElement('script');
-        script.src = "//embed.typeform.com/next/embed.js";
-        script.async = true;
-        document.body.appendChild(script);
-      }
-    }
-  }, [isQuoteOpen]);
-
   return (
     <section id="home" className="relative w-full overflow-hidden h-[85vh]">
       <img
@@ -173,7 +160,7 @@ const Hero = () => {
 
       {isQuoteOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full max-w-3xl relative">
+          <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full max-w-4xl relative">
             <div className="flex justify-between items-center p-4 border-b">
               <h2 className="text-lg font-semibold">Request a Quote</h2>
               <button
@@ -185,7 +172,17 @@ const Hero = () => {
               </button>
             </div>
             <div className="p-4">
-              <div data-tf-live="01JY4DGP2ZMXJ6C8W993THWHEC" id="typeform-embed-container"></div>
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLScfmn2dFy_93G2lIbiXqgNGuTa2e6JOgv9lU3r84r689jqYAA/viewform?embedded=true"
+                width="100%"
+                height="800"
+                frameBorder="0"
+                marginHeight="0"
+                marginWidth="0"
+                title="Get Quote Form"
+              >
+                Loading…
+              </iframe>
             </div>
           </div>
         </div>
