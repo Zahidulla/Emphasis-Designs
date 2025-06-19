@@ -37,7 +37,6 @@ const offerTexts = [
   },
 ];
 
-// subtle breathing opacity animation CSS
 const breathingOpacityCSS = `
 @keyframes breathingOpacity {
   0%, 100% {
@@ -56,7 +55,6 @@ const Hero = () => {
   const [currentOfferIndex, setCurrentOfferIndex] = useState(0);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
-  // Inject breathing opacity animation
   useEffect(() => {
     if (typeof window !== 'undefined') {
       let styleTag = document.getElementById('breathing-opacity-style');
@@ -69,7 +67,6 @@ const Hero = () => {
     }
   }, []);
 
-  // Rotate offers
   useEffect(() => {
     const offerInterval = setInterval(() => {
       setCurrentOfferIndex((prevIndex) => (prevIndex + 1) % offerTexts.length);
@@ -158,9 +155,10 @@ const Hero = () => {
         </motion.div>
       </div>
 
+      {/* Responsive Quote Modal */}
       {isQuoteOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full max-w-4xl relative">
+          <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full max-w-4xl relative max-h-[90vh]">
             <div className="flex justify-between items-center p-4 border-b">
               <h2 className="text-lg font-semibold">Request a Quote</h2>
               <button
@@ -172,7 +170,7 @@ const Hero = () => {
               </button>
             </div>
             <div className="p-4 w-full">
-              <div className="w-full aspect-[4/3] sm:aspect-[16/9]">
+              <div className="h-[80vh] sm:aspect-[16/9] w-full">
                 <iframe
                   src="https://docs.google.com/forms/d/e/1FAIpQLScfmn2dFy_93G2lIbiXqgNGuTa2e6JOgv9lU3r84r689jqYAA/viewform?embedded=true"
                   className="w-full h-full border-0"
