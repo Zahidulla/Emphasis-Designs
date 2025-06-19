@@ -129,7 +129,7 @@ const SocialConnect = () => {
         </Button>
       </div>
 
-      {/* Quote Modal */}
+      {/* Quote Modal with Embedded Google Form */}
       {quoteOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full max-w-3xl relative">
@@ -143,17 +143,19 @@ const SocialConnect = () => {
                 ×
               </button>
             </div>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSdWZfSdQxxx/viewform?embedded=true"
-              width="100%"
-              height="500"
-              frameBorder="0"
-              title="Get Quote Form"
-              marginHeight={0}
-              marginWidth={0}
-            >
-              Loading…
-            </iframe>
+            <div className="p-4">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLScfmn2dFy_93G2lIbiXqgNGuTa2e6JOgv9lU3r84r689jqYAA/viewform?embedded=true"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                marginHeight="0"
+                marginWidth="0"
+                title="Get Quote Form"
+              >
+                Loading…
+              </iframe>
+            </div>
           </div>
         </div>
       )}
