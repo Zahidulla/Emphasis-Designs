@@ -6,12 +6,20 @@ import { useSwipeable } from 'react-swipeable';
 const projectData = {
   Exterior: [
     {
-      image: 'https://images.unsplash.com/photo-1697256200022-f61abccad430',
-      title: 'Commercial Tower',
+      image: 'https://drive.google.com/file/d/1brUAnXvH9hmlc0qraWQxCBq7821HJLJQ/view?usp=sharing',
+      title: 'Commercial Tower22',
     },
     {
-      image: 'https://images.unsplash.com/photo-1495224814653-94f36c0a31ea',
-      title: 'Twin Towers Development',
+      image: 'https://drive.google.com/file/d/1iRKNbVw2dutBpchQ8EJj35b_dNf1eo29/view?usp=sharing',
+      title: 'Twin Towers Development2',
+    },
+    {
+      image: 'https://drive.google.com/file/d/1FaGJ7hKUZ6C44_bzd2HYKjB0lWLBwnFs/view?usp=sharing',
+      title: 'Twin Towers Developmen1t',
+    },
+    {
+      image: 'https://drive.google.com/file/d/1poU2C8UFszc8x8ivuLRUM7G92D8GE62o/view?usp=sharing',
+      title: 'Twin Towers Developmen22',
     },
   ],
   Interior: [
