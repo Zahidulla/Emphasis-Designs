@@ -4,24 +4,24 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useSwipeable } from 'react-swipeable';
 
 const projectData = {
-  Exterior: [
-    {
-      image: 'https://drive.google.com/file/d/1brUAnXvH9hmlc0qraWQxCBq7821HJLJQ/view?usp=sharing',
-      title: 'Commercial Tower22',
-    },
-    {
-      image: 'https://drive.google.com/file/d/1iRKNbVw2dutBpchQ8EJj35b_dNf1eo29/view?usp=sharing',
-      title: 'Twin Towers Development2',
-    },
-    {
-      image: 'https://drive.google.com/file/d/1FaGJ7hKUZ6C44_bzd2HYKjB0lWLBwnFs/view?usp=sharing',
-      title: 'Twin Towers Developmen1t',
-    },
-    {
-      image: 'https://drive.google.com/file/d/1poU2C8UFszc8x8ivuLRUM7G92D8GE62o/view?usp=sharing',
-      title: 'Twin Towers Developmen22',
-    },
-  ],
+ Exterior: [
+  {
+    image: 'https://drive.google.com/uc?id=1brUAnXvH9hmlc0qraWQxCBq7821HJLJQ',
+    title: 'Commercial Tower22',
+  },
+  {
+    image: 'https://drive.google.com/uc?id=1iRKNbVw2dutBpchQ8EJj35b_dNf1eo29',
+    title: 'Twin Towers Development2',
+  },
+  {
+    image: 'https://drive.google.com/uc?id=1FaGJ7hKUZ6C44_bzd2HYKjB0lWLBwnFs',
+    title: 'Twin Towers Developmen1t',
+  },
+  {
+    image: 'https://drive.google.com/uc?id=1poU2C8UFszc8x8ivuLRUM7G92D8GE62o',
+    title: 'Twin Towers Developmen22',
+  },
+],
   Interior: [
     {
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
