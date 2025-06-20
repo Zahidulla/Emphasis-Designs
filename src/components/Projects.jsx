@@ -10,7 +10,7 @@ const projectData = {
     title: 'Commercial Tower22',
   },
   {
-    image: 'https://drive.google.com/uc?export=view&id=1iRKNbVw2dutBpchQ8EJj35b_dNf1eo29?usp=drive_link',
+    image: 'https://drive.usercontent.google.com/download?id=1brUAnXvH9hmlc0qraWQxCBq7821HJLJQ&export=view',
     title: 'Twin Towers Development2',
   },
   {
