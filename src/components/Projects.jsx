@@ -26,7 +26,7 @@ const projectData = {
     title: 'Commercial Tower2233',
   },
   {
-    image: 'https://drive.google.com/uc?export=view&id=1poU2C8UFszc8x8ivuLRUM7G92D8GE62o?usp=drive_link',
+    image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399786/WhatsApp_Image_2025-06-19_at_9.48.17_PM_2_h0flrn.jpg',
     title: 'Twin Towers Development122',
   },
   {
@@ -35,6 +35,14 @@ const projectData = {
   },
   {
     image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399786/WhatsApp_Image_2025-06-19_at_9.48.17_PM_l38u1x.jpg',
+    title: 'Twin Towers Developmen22',
+  },
+   {
+    image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399786/WhatsApp_Image_2025-06-19_at_9.48.16_PM_1_oytk4r.jpg',
+    title: 'Twin Towers Developmen1t333',
+  },
+  {
+    image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399786/WhatsApp_Image_2025-06-19_at_9.48.17_PM_1_bdx8nu.jpg',
     title: 'Twin Towers Developmen22',
   },
 ],
