@@ -323,6 +323,7 @@ const Projects = () => {
         )}
       </AnimatePresence>
     </>
+   <section id="projects" className="py-20 bg-gray-50">
   );
 };
 
