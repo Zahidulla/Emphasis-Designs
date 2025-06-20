@@ -65,7 +65,6 @@ const projectData = {
       image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400982/WhatsApp_Image_2025-06-20_at_11.54.39_AM_1_hdsyut.jpg',
       title: 'Site Logisticsas',
     },
-  ],
      {
       image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400978/WhatsApp_Image_2025-06-20_at_11.54.43_AM_cxpizy.jpg',
       title: 'Construction Site Aq',
@@ -74,7 +73,6 @@ const projectData = {
       image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400977/WhatsApp_Image_2025-06-20_at_11.54.43_AM_1_wfb8n0.jpg',
       title: 'Site Logistics22',
     },
-  ],
        {
       image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400983/WhatsApp_Image_2025-06-20_at_11.54.38_AM_1_khn9wd.jpg',
       title: 'Construction Site 2A',
@@ -83,7 +81,6 @@ const projectData = {
       image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400983/WhatsApp_Image_2025-06-20_at_11.54.39_AM_wyc7fv.jpg',
       title: 'Site Logistic22s',
     },
-  ],
       {
       image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400982/WhatsApp_Image_2025-06-20_at_11.54.41_AM_1_reark3.jpg',
       title: 'Construction Site 22A',
@@ -91,6 +88,18 @@ const projectData = {
     {
       image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400981/WhatsApp_Image_2025-06-20_at_11.54.42_AM_1_looz6b.jpg',
       title: 'Site Logistics2',
+    },
+       {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400983/WhatsApp_Image_2025-06-20_at_11.54.39_AM_wyc7fv.jpg',
+      title: 'Site Logistic22s',
+    },
+      {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400982/WhatsApp_Image_2025-06-20_at_11.54.41_AM_wqaay7.jpg',
+      title: 'Construction Site 22wA',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400976/WhatsApp_Image_2025-06-20_at_11.54.46_AM_zrurbd.jpg',
+      title: 'Site Logistics2ss',
     },
   ],
 };
