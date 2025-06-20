@@ -7,7 +7,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
-    { name: 'Gallery', href: '#projects' },
+    { name: 'Gallery', href: '#projects' }, // 👈 This will scroll to the projects section
     { name: 'Our Team', href: '#team' },
     { name: 'Services', href: '#services' },
   ];
@@ -18,8 +18,8 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
       transition: {
         type: 'spring',
         stiffness: 400,
-        damping: 40
-      }
+        damping: 40,
+      },
     },
     open: {
       x: 0,
@@ -28,15 +28,22 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
         stiffness: 400,
         damping: 40,
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const linkVariants = {
     closed: { opacity: 0, y: 20 },
-    open: { opacity: 1, y: 0 }
+    open: { opacity: 1, y: 0 },
   };
+
+  // Optional: smooth scroll polyfill for older browsers if needed
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      document.documentElement.style.scrollBehavior = 'smooth';
+    }
+  }, []);
 
   return (
     <AnimatePresence>
@@ -59,7 +66,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
                 <X className="h-6 w-6" />
               </Button>
             </div>
-            
+
             <nav className="px-8 py-4">
               <ul className="space-y-6">
                 {navLinks.map((link) => (
@@ -67,7 +74,10 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
                     <a
                       href={link.href}
                       className="text-xl font-medium text-gray-800 hover:text-orange-500 transition-colors duration-300 block py-2"
-                      onClick={toggleMenu}
+                      onClick={() => {
+                        // Slight delay to ensure smooth scroll before menu closes
+                        setTimeout(toggleMenu, 100);
+                      }}
                     >
                       {link.name}
                     </a>
