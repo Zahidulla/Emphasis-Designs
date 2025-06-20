@@ -144,7 +144,7 @@ const Projects = () => {
   return (
     <>
       {/* Projects Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="projects" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -290,7 +290,7 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Smaller Video Modal */}
+      {/* Video Modal */}
       <AnimatePresence>
         {modalVideo && (
           <motion.div
@@ -325,6 +325,5 @@ const Projects = () => {
     </>
   );
 };
-<section id="projects" className="py-20 bg-gray-50">
 
 export default Projects;
