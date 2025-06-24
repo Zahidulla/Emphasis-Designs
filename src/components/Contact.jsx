@@ -54,7 +54,7 @@ const Contact = () => {
           className="max-w-3xl mx-auto text-center mb-8"
         >
           <p className="text-gray-800 mb-4 text-lg">
-            Address:- Tank Bund Road, Opposite Indira Canteen Bismillah Nagar, Bengaluru-560029, Karnataka, India
+            Address:- Gottigere post, Near Glentree School, CK Palya Rd, Hommadevanahalli, Bengaluru - 560083, Karnataka, India
           </p>
 
           <h4 className="text-2xl font-bold mb-4">Contact Number</h4>
