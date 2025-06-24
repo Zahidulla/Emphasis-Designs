@@ -60,18 +60,18 @@ const Contact = () => {
           <h4 className="text-2xl font-bold mb-4">Contact Number</h4>
           <p className="text-gray-800 mb-2 text-lg">
             <a
-              href="tel:+918892325805"
+              href="tel:+919036827897"
               className="hover:underline text-orange-500 font-semibold text-lg md:text-xl"
             >
-              +91-88923 25805
+              +91-90368 27897
             </a>
           </p>
           <p className="text-gray-800 mb-6 text-lg">
             <a
-              href="tel:+918088255301"
+              href="tel:+918892325805"
               className="hover:underline text-orange-500 font-semibold text-lg md:text-xl"
             >
-              +91-80882 55301
+              +91-88923 25805
             </a>
           </p>
 
