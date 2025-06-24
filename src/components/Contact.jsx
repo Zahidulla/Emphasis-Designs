@@ -95,7 +95,7 @@ const Contact = () => {
           className="flex justify-center space-x-8 mt-12"
         >
           <a
-            href="https://wa.me/918892325805"
+            href="https://wa.me/919036827897"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
