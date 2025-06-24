@@ -25,7 +25,7 @@ const SocialConnect = () => {
   const socialLinks = [
     {
       icon: <FaWhatsapp />,
-      href: 'https://wa.me/918892325805',
+      href: 'https://wa.me/919036827897',
       label: 'WhatsApp',
       color: 'text-green-500 hover:text-green-600',
     },
