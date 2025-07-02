@@ -37,7 +37,7 @@ const SocialConnect = () => {
     },
     {
       icon: <FaLinkedin />,
-      href: 'https://linkedin.com/company/emphasisdesigns',
+      href: 'https://linkedin.com/company/emphasis-designs',
       label: 'LinkedIn',
       color: 'text-blue-700 hover:text-blue-800',
     },
