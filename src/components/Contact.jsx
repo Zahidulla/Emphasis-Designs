@@ -68,10 +68,10 @@ const Contact = () => {
           </p>
           <p className="text-gray-800 mb-6 text-lg">
             <a
-              href="tel:+918892325805"
+              href="tel:+9188088255301"
               className="hover:underline text-orange-500 font-semibold text-lg md:text-xl"
             >
-              +91-88923 25805
+              +91-88088 255301
             </a>
           </p>
 
@@ -113,7 +113,7 @@ const Contact = () => {
             <FaInstagram />
           </a>
           <a
-            href="https://linkedin.com/company/emphasisdesigns"
+            href="https://linkedin.com/company/emphasis-designs"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
