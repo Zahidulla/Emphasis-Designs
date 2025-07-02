@@ -6,6 +6,7 @@ import {
   FaLinkedin,
   FaYoutube,
   FaTimes,
+  FaMapMarkerAlt,
 } from 'react-icons/fa';
 import { FiGlobe, FiInfo } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -14,7 +15,7 @@ const SocialConnect = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [showText, setShowText] = useState(true);
-  const dropdownRef = useRef(null); // Reference to the dropdown
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     if (window.innerWidth < 640) {
@@ -67,6 +68,12 @@ const SocialConnect = () => {
       label: 'YouTube',
       color: 'text-red-600 hover:text-red-700',
     },
+    {
+      icon: <FaMapMarkerAlt />,
+      href: 'https://maps.app.goo.gl/MAdKWM26yn9SbDM97',
+      label: 'Google Maps',
+      color: 'text-orange-500 hover:text-orange-600',
+    },
   ];
 
   const handleConnectClick = () => {
@@ -99,7 +106,7 @@ const SocialConnect = () => {
         <AnimatePresence initial={false}>
           {isOpen && (
             <motion.div
-              ref={dropdownRef} // Attach ref here
+              ref={dropdownRef}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
