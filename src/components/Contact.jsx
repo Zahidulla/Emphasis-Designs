@@ -169,7 +169,7 @@ const Contact = () => {
         <h3 className="text-3xl font-bold mb-6 text-orange-500">Locate Us</h3>
 
         <a
-          href="https://maps.app.goo.gl/BD3FPxCNpdsoFD5H9"
+          href="https://maps.app.goo.gl/MAdKWM26yn9SbDM97"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-orange-600 transition-colors duration-300"
