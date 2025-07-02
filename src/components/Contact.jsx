@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaWhatsapp, FaInstagram, FaLinkedin, FaYoutube, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
   const [showModal, setShowModal] = useState(false);
@@ -158,7 +158,7 @@ const Contact = () => {
         </div>
       )}
 
-      {/* Locate Us Section with Pin Link */}
+      {/* Locate Us Section with Pin Icon */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -172,9 +172,10 @@ const Contact = () => {
           href="https://maps.app.goo.gl/BD3FPxCNpdsoFD5H9"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-orange-600 transition-colors duration-300"
+          className="inline-flex items-center gap-2 bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-orange-600 transition-colors duration-300"
         >
-          📍 View Location on Google Maps
+          <FaMapMarkerAlt className="text-white text-xl" />
+          View Location on Google Maps
         </a>
       </motion.div>
     </section>
