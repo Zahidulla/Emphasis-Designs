@@ -99,7 +99,8 @@ const SocialConnect = () => {
     }
   };
 
-  const handleCloseClick = () => {
+  const handleCloseClick = (event) => {
+    event.stopPropagation(); // Prevent parent button click
     setIsOpen(false);
   };
 
@@ -147,7 +148,7 @@ const SocialConnect = () => {
             isOpen ? (
               <span
                 className="whitespace-nowrap cursor-pointer"
-                onClick={handleCloseClick} // Close on text click
+                onClick={handleCloseClick}
               >
                 Close
               </span>
