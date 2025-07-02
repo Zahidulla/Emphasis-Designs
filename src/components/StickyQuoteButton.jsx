@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   FaWhatsapp,
@@ -14,6 +14,7 @@ const SocialConnect = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [showText, setShowText] = useState(true);
+  const dropdownRef = useRef(null); // Reference to the dropdown
 
   useEffect(() => {
     if (window.innerWidth < 640) {
@@ -21,6 +22,25 @@ const SocialConnect = () => {
       return () => clearTimeout(timer);
     }
   }, []);
+
+  // Click outside handler
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const socialLinks = [
     {
@@ -79,6 +99,7 @@ const SocialConnect = () => {
         <AnimatePresence initial={false}>
           {isOpen && (
             <motion.div
+              ref={dropdownRef} // Attach ref here
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
@@ -117,7 +138,7 @@ const SocialConnect = () => {
           <FiGlobe className="text-white text-xl" aria-label="Website" title="Website" />
         </Button>
 
-        {/* Get Quote Button WITHOUT glow */}
+        {/* Get Quote Button */}
         <Button
           onClick={handleQuoteClick}
           className={`bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg flex items-center justify-center space-x-2 font-semibold transition-all duration-300
@@ -129,7 +150,7 @@ const SocialConnect = () => {
         </Button>
       </div>
 
-      {/* Quote Modal with Embedded Google Form */}
+      {/* Quote Modal */}
       {quoteOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full max-w-3xl relative">
