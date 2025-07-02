@@ -99,6 +99,10 @@ const SocialConnect = () => {
     }
   };
 
+  const handleCloseClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <div className="fixed bottom-4 right-4 z-50 flex flex-col items-center space-y-3">
@@ -140,7 +144,16 @@ const SocialConnect = () => {
         >
           {isOpen && <FaTimes className="text-white text-xl" />}
           {showText && (
-            <span className="whitespace-nowrap">{isOpen ? 'Close' : 'Connect'}</span>
+            isOpen ? (
+              <span
+                className="whitespace-nowrap cursor-pointer"
+                onClick={handleCloseClick} // Close on text click
+              >
+                Close
+              </span>
+            ) : (
+              <span className="whitespace-nowrap">Connect</span>
+            )
           )}
           <FiGlobe className="text-white text-xl" aria-label="Website" title="Website" />
         </Button>
