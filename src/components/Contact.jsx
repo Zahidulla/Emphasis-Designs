@@ -68,7 +68,7 @@ const Contact = () => {
           </p>
           <p className="text-gray-800 mb-6 text-lg">
             <a
-              href="tel:+9188088255301"
+              href="tel:+918088255301"
               className="hover:underline text-orange-500 font-semibold text-lg md:text-xl"
             >
               +91-88088 255301
@@ -81,7 +81,7 @@ const Contact = () => {
               href="mailto:emphasisdesigns@gmail.com"
               className="hover:underline text-orange-500 font-semibold text-lg md:text-xl"
             >
-              emphasisdesigns@gmail.com
+              emphasisdesign.ed@gmail.com
             </a>
           </p>
         </motion.div>
