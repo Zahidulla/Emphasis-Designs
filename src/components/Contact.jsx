@@ -78,7 +78,7 @@ const Contact = () => {
           <p className="text-gray-800 text-lg">
             Email id:{' '}
             <a
-              href="mailto:emphasisdesigns@gmail.com"
+              href="mailto:emphasisdesign.ed@gmail.com"
               className="hover:underline text-orange-500 font-semibold text-lg md:text-xl"
             >
               emphasisdesign.ed@gmail.com
@@ -158,24 +158,24 @@ const Contact = () => {
         </div>
       )}
 
-      {/* Google Maps Section */}
+      {/* Locate Us Section with Pin Link */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="container mx-auto px-4 mt-20"
+        className="container mx-auto px-4 mt-20 text-center"
       >
-        <h3 className="text-3xl font-bold mb-6 text-center text-orange-500">Locate Us</h3>
-        <div className="w-full h-[400px]">
-          <iframe
-            src="https://maps.google.com/maps?q=Gottigere%20post%2C%20Near%20Glentree%20School%2C%20CK%20Palya%20Rd%2C%20Hommadevanahalli%2C%20Bengaluru%20-%20560083&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            className="w-full h-full border-0 rounded-lg shadow-md"
-            allowFullScreen
-            loading="lazy"
-            title="Emphasis Designs Location"
-          ></iframe>
-        </div>
+        <h3 className="text-3xl font-bold mb-6 text-orange-500">Locate Us</h3>
+
+        <a
+          href="https://maps.app.goo.gl/BD3FPxCNpdsoFD5H9"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-orange-600 transition-colors duration-300"
+        >
+          📍 View Location on Google Maps
+        </a>
       </motion.div>
     </section>
   );
