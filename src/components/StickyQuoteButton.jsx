@@ -24,7 +24,6 @@ const SocialConnect = () => {
     }
   }, []);
 
-  // Click outside handler
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -76,20 +75,6 @@ const SocialConnect = () => {
     },
   ];
 
-  const handleConnectClick = () => {
-    if (isOpen) {
-      setTimeout(() => setIsOpen(false), 2000);
-    } else {
-      setIsOpen(true);
-    }
-
-    setShowText(true);
-
-    if (window.innerWidth < 640) {
-      setTimeout(() => setShowText(false), 5000);
-    }
-  };
-
   const handleQuoteClick = () => {
     setQuoteOpen(true);
     setShowText(true);
@@ -97,11 +82,6 @@ const SocialConnect = () => {
     if (window.innerWidth < 640) {
       setTimeout(() => setShowText(false), 5000);
     }
-  };
-
-  const handleCloseClick = (event) => {
-    event.stopPropagation(); // Prevent parent button click
-    setIsOpen(false);
   };
 
   return (
@@ -135,29 +115,31 @@ const SocialConnect = () => {
         </AnimatePresence>
 
         {/* Connect Button */}
-        <Button
-          onClick={handleConnectClick}
-          aria-expanded={isOpen}
-          aria-label={isOpen ? 'Close social links' : 'Open social links'}
-          className={`bg-gray-800 hover:bg-gray-900 text-white rounded-full shadow-lg flex items-center justify-center space-x-2 font-semibold transition-all duration-300
+        <div
+          className={`bg-gray-800 hover:bg-gray-900 text-white rounded-full shadow-lg flex items-center justify-center space-x-2 font-semibold transition-all duration-300 cursor-pointer
             ${showText ? 'text-lg px-6 py-3 w-[200px]' : 'text-xl p-3 w-[56px]'}
           `}
         >
-          {isOpen && <FaTimes className="text-white text-xl" />}
+          {/* Icon: toggles drawer */}
+          <div onClick={() => setIsOpen(!isOpen)} className="flex items-center space-x-2 cursor-pointer">
+            {isOpen && <FaTimes className="text-white text-xl" />}
+            {!isOpen && <FiGlobe className="text-white text-xl" aria-label="Website" title="Website" />}
+          </div>
+
+          {/* Text: only closes, does not toggle */}
           {showText && (
             isOpen ? (
               <span
                 className="whitespace-nowrap cursor-pointer"
-                onClick={handleCloseClick}
+                onClick={() => setIsOpen(false)}
               >
                 Close
               </span>
             ) : (
-              <span className="whitespace-nowrap">Connect</span>
+              <span className="whitespace-nowrap" onClick={() => setIsOpen(true)}>Connect</span>
             )
           )}
-          <FiGlobe className="text-white text-xl" aria-label="Website" title="Website" />
-        </Button>
+        </div>
 
         {/* Get Quote Button */}
         <Button
