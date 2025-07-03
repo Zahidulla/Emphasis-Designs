@@ -48,12 +48,28 @@ const projectData = {
 ],
   Interior: [
     {
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c',
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557709/Enscape_2025-05-07-00-25-47_Enscape_scene_6_o2qpto.png',
       title: 'Luxury Residences',
     },
     {
-      image: 'https://images.unsplash.com/photo-1598300057791-6b3d87db8bbf',
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557772/Enscape_2025-05-07-00-25-47_Enscape_scene_10_ips0lo.png',
       title: 'Modern Living Room',
+    },
+       {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557719/Enscape_2025-05-07-00-25-47_Enscape_scene_3_ii7e1q.png',
+      title: 'Luxury Residences1',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557699/Enscape_2025-05-07-00-25-47_Enscape_scene_12_ntrfpm.png',
+      title: 'Modern Living Room2',
+    },
+          {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557694/Enscape_2025-05-07-00-25-47_Enscape_scene_1_t7lwl1.png',
+      title: 'Luxury Residences21',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557688/Enscape_2025-05-07-00-25-47_Enscape_scene_9_ojmxwz.png',
+      title: 'Modern Living Room21',
     },
   ],
   Site: [
