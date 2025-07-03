@@ -71,7 +71,7 @@ const Contact = () => {
               href="tel:+918088255301"
               className="hover:underline text-orange-500 font-semibold text-lg md:text-xl"
             >
-              +91-88088 255301
+              +91-80882 55301
             </a>
           </p>
 
