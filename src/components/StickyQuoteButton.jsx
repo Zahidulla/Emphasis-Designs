@@ -7,6 +7,7 @@ import {
   FaYoutube,
   FaTimes,
   FaMapMarkerAlt,
+  FaEnvelope,
 } from 'react-icons/fa';
 import { FiGlobe, FiInfo } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -72,6 +73,12 @@ const SocialConnect = () => {
       href: 'https://maps.app.goo.gl/MAdKWM26yn9SbDM97',
       label: 'Google Maps',
       color: 'text-orange-500 hover:text-orange-600',
+    },
+    {
+      icon: <FaEnvelope />,
+      href: 'mailto:emphasisdesign.ed@gmail.com',
+      label: 'Gmail',
+      color: 'text-yellow-600 hover:text-yellow-700',
     },
   ];
 
