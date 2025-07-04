@@ -3,8 +3,134 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useSwipeable } from 'react-swipeable';
 
-// ... (keep your full projectData and featuredVideos as-is)
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { useSwipeable } from 'react-swipeable';
 
+const projectData = {
+  Exterior: [
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399789/WhatsApp_Image_2025-06-19_at_9.48.12_PM_yfwv06.jpg',
+      title: 'Commercial Tower22',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399789/WhatsApp_Image_2025-06-19_at_9.48.11_PM_axktgz.jpg',
+      title: 'Twin Towers Development2',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399788/WhatsApp_Image_2025-06-19_at_9.48.14_PM_2_pyz4ar.jpg',
+      title: 'Twin Towers Developmen1t',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399788/WhatsApp_Image_2025-06-19_at_9.48.14_PM_sfl7av.jpg',
+      title: 'Twin Towers Developmen22',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399788/WhatsApp_Image_2025-06-19_at_9.48.15_PM_1_nlskge.jpg',
+      title: 'Commercial Tower2233',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399786/WhatsApp_Image_2025-06-19_at_9.48.17_PM_2_h0flrn.jpg',
+      title: 'Twin Towers Development122',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399788/WhatsApp_Image_2025-06-19_at_9.48.15_PM_pyi6mi.jpg',
+      title: 'Twin Towers Developmen1t333',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399786/WhatsApp_Image_2025-06-19_at_9.48.17_PM_l38u1x.jpg',
+      title: 'Twin Towers Developmen22',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399786/WhatsApp_Image_2025-06-19_at_9.48.16_PM_1_oytk4r.jpg',
+      title: 'Twin Towers Developmen1t333',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750399786/WhatsApp_Image_2025-06-19_at_9.48.17_PM_1_bdx8nu.jpg',
+      title: 'Twin Towers Developmen22',
+    },
+  ],
+  Interior: [
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557709/Enscape_2025-05-07-00-25-47_Enscape_scene_6_o2qpto.png',
+      title: 'Luxury Residences',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557772/Enscape_2025-05-07-00-25-47_Enscape_scene_10_ips0lo.png',
+      title: 'Modern Living Room',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557719/Enscape_2025-05-07-00-25-47_Enscape_scene_3_ii7e1q.png',
+      title: 'Luxury Residences1',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557699/Enscape_2025-05-07-00-25-47_Enscape_scene_12_ntrfpm.png',
+      title: 'Modern Living Room2',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557694/Enscape_2025-05-07-00-25-47_Enscape_scene_1_t7lwl1.png',
+      title: 'Luxury Residences21',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1751557688/Enscape_2025-05-07-00-25-47_Enscape_scene_9_ojmxwz.png',
+      title: 'Modern Living Room21',
+    },
+  ],
+  Site: [
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400984/WhatsApp_Image_2025-06-20_at_11.54.38_AM_sc25zr.jpg',
+      title: 'Construction Site A1',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400982/WhatsApp_Image_2025-06-20_at_11.54.39_AM_1_hdsyut.jpg',
+      title: 'Site Logisticsas',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400978/WhatsApp_Image_2025-06-20_at_11.54.43_AM_cxpizy.jpg',
+      title: 'Construction Site Aq',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400977/WhatsApp_Image_2025-06-20_at_11.54.43_AM_1_wfb8n0.jpg',
+      title: 'Site Logistics22',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400983/WhatsApp_Image_2025-06-20_at_11.54.38_AM_1_khn9wd.jpg',
+      title: 'Construction Site 2A',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400983/WhatsApp_Image_2025-06-20_at_11.54.39_AM_wyc7fv.jpg',
+      title: 'Site Logistic22s',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400982/WhatsApp_Image_2025-06-20_at_11.54.41_AM_1_reark3.jpg',
+      title: 'Construction Site 22A',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400981/WhatsApp_Image_2025-06-20_at_11.54.42_AM_1_looz6b.jpg',
+      title: 'Site Logistics2',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400983/WhatsApp_Image_2025-06-20_at_11.54.39_AM_wyc7fv.jpg',
+      title: 'Site Logistic22s',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400982/WhatsApp_Image_2025-06-20_at_11.54.41_AM_wqaay7.jpg',
+      title: 'Construction Site 22wA',
+    },
+    {
+      image: 'https://res.cloudinary.com/dgztlk3y1/image/upload/v1750400976/WhatsApp_Image_2025-06-20_at_11.54.46_AM_zrurbd.jpg',
+      title: 'Site Logistics2ss',
+    },
+  ],
+};
+
+const featuredVideos = [
+  { url: 'https://www.youtube.com/embed/KsYdgb65FJo?si=KlWKA3f3YSuTCJTH' },
+  { url: 'https://www.youtube.com/embed/lUWL4-HfEVM?si=Crim0Je6nRnoeh8S' },
+  { url: 'https://www.youtube.com/embed/NEKP-1REoto?si=khWZ_mns0D_GIzG1' },
+  { url: 'https://www.youtube.com/embed/i_iNHzVadc0?si=hpyZcZ0snkXotcym' },
+];
 const Projects = () => {
   const tabs = Object.keys(projectData);
   const [activeTab, setActiveTab] = useState('Exterior');
