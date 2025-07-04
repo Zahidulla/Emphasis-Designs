@@ -178,9 +178,6 @@ const Contact = () => {
           View Location on Google Maps
         </a>
       </motion.div>
-       <p className="text-gray-800 mb-4 text-lg">
-            GST Number: 29KQXPS9337B1ZR 
-      </p>
     </section>
   );
 };
