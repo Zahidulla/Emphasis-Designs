@@ -54,7 +54,7 @@ const Contact = () => {
           className="max-w-3xl mx-auto text-center mb-8"
         >
           <p className="text-gray-800 mb-4 text-lg">
-            Address:- Gottigere post, Near Glentree School, CK Palya Rd, Hommadevanahalli, Bengaluru - 560083, Karnataka, India
+            Address:- Gottigere post, Near Glentree School, CK Palya Rd, Hommadevanahalli, Bengaluru - 560083, Karnataka, India 
           </p>
 
           <h4 className="text-2xl font-bold mb-4">Contact Number</h4>
@@ -178,6 +178,9 @@ const Contact = () => {
           View Location on Google Maps
         </a>
       </motion.div>
+       <p className="text-gray-800 mb-4 text-lg">
+            GST Number: 29KQXPS9337B1ZR 
+      </p>
     </section>
   );
 };
